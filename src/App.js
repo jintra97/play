@@ -1,23 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { getNowPlaying } from "./spotify";
+import React, { useEffect, useState } from "react";
+import { getNowPlaying } from "./spotify";
 
 function App() {
+  const [nowPlaying, setNowPlaying] = useState(null);
+
+  useEffect(() => {
+    const fetchNowPlaying = async () => {
+      const accessToken = "JE_ACCESS_TOKEN_HIER"; // Gebruik jouw Spotify-access token
+      const data = await getNowPlaying(accessToken);
+      setNowPlaying(data);
+    };
+
+    fetchNowPlaying();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h1>play.jintra.nl</h1>
+      {nowPlaying ? (
+        nowPlaying.error ? (
+          <p>{nowPlaying.error}</p>
+        ) : (
+          <div>
+            <img
+              src={nowPlaying.albumImage}
+              alt="Album cover"
+              style={{ width: "300px", borderRadius: "10px" }}
+            />
+            <h2>{nowPlaying.song}</h2>
+            <p>{nowPlaying.artist}</p>
+          </div>
+        )
+      ) : (
+        <p>Loading...</p>
+      )}
     </div>
   );
 }
