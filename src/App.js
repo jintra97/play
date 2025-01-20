@@ -1,6 +1,5 @@
 import { getNowPlaying } from "./spotify";
 import React, { useEffect, useState } from "react";
-import { getNowPlaying } from "./spotify";
 
 function App() {
   const [nowPlaying, setNowPlaying] = useState(null);
