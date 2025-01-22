@@ -8,8 +8,9 @@ function App() {
   useEffect(() => {
     const fetchNowPlaying = async () => {
       try {
-        const response = await fetch("http://localhost:3000/now-playing");
+        const response = await fetch("https://play-api-nine.vercel.app/api/now-playing");
         const data = await response.json();
+        console.log("API data:", data);
         setNowPlaying(data);
       } catch (error) {
         console.error("fout bij ophalen now playing:", error);
