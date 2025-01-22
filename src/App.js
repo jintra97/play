@@ -10,7 +10,6 @@ function App() {
       try {
         const response = await fetch("https://play-api-nine.vercel.app/api/now-playing");
         const data = await response.json();
-        console.log("API data:", data);
         setNowPlaying(data);
       } catch (error) {
         console.error("fout bij ophalen now playing:", error);
@@ -24,23 +23,38 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>what jintra is playing</h1>
-        {nowPlaying ? (
-          <div>
-            <p>
-              <strong>{nowPlaying.song}</strong> by {nowPlaying.artist}
-            </p>
+      <div className="templateContainer">
+        <header>
+          <a href="https://jintra.nl">
             <img
-              src={nowPlaying.albumImage}
-              alt="Album cover"
-              style={{ width: "300px", borderRadius: "10px" }}
+              className="logo"
+              src="https://i.imgur.com/Goa2Ydw.png"
+              alt="Jintra logo"
             />
-          </div>
-        ) : (
-          <p>het is stil in jintra's airpods...</p>
-        )}
-      </header>
+          </a>
+          <h1>wat jintra speelt</h1>
+        </header>
+        <main>
+          {nowPlaying ? (
+            <div className="nowPlayingContainer">
+              <img
+                className="albumCover"
+                src={nowPlaying.albumImage}
+                alt="Album cover"
+              />
+              <div className="trackInfo">
+                <p className="songTitle">{nowPlaying.song}</p>
+                <p className="artistName">{nowPlaying.artist}</p>
+              </div>
+            </div>
+          ) : (
+            <p className="noMusic">het is stil in jintra's airpods...</p>
+          )}
+        </main>
+        <footer>
+          <p>© 2025 Jintra — alle rechten voorbehouden.</p>
+        </footer>
+      </div>
     </div>
   );
 }
