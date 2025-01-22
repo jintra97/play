@@ -6,20 +6,19 @@ html, body {
   height: 100%;
   font-family: helvetica, arial, sans-serif;
   background-color: #6d4588;
-  overflow-x: hidden;
+  overflow-x: hidden; /* voorkomt horizontaal scrollen */
 }
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100%; /* vult de hoogte van het scherm */
 }
 
 .templateContainer {
   width: 60%;
   max-width: 1200px;
-  height: 100%;
   margin: 0 auto;
   background-color: #ffffff;
   padding: 20px;
@@ -82,7 +81,7 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .templateContainer {
-    width: 90%;
+    width: 95% !important;
   }
   .nowPlayingContainer {
     flex-direction: column;
