@@ -4,7 +4,7 @@ html, body {
   width: 100%;
   height: 100%;
   font-family: helvetica, arial, sans-serif;
-  background-color: #6d4588;
+  background-color: #6d4588; /* achtergrondkleur pagina */
   overflow-x: hidden; /* voorkomt horizontaal scrollen */
 }
 
@@ -12,23 +12,17 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 20px; /* extra ruimte rondom de container */
-  box-sizing: border-box; /* zorgt dat padding binnen de totale hoogte valt */
+  min-height: 100vh; /* zorgt dat de achtergrond altijd de volledige hoogte beslaat */
 }
 
 .templateContainer {
   width: 60%;
   max-width: 1200px;
+  margin: 20px auto; /* zorgt voor gelijke padding */
   background-color: #ffffff;
   padding: 20px;
-  border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  display: flex;
-  flex-direction: column; /* voor verticale uitlijning van inhoud */
-  justify-content: center; /* inhoud in het midden centreren */
-  min-height: 80vh; /* zorgt dat de container voldoende ruimte inneemt */
 }
 
 .logo {
@@ -36,68 +30,14 @@ html, body {
   margin-bottom: 20px;
 }
 
-h1 {
-  font-size: 24px;
-  color: #202020;
-  margin: 20px 0;
-}
-
-.nowPlayingContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.albumCover {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.trackInfo {
-  text-align: left;
-}
-
-.songTitle {
-  font-size: 20px;
-  font-weight: bold;
-  color: #202020;
-}
-
-.artistName {
-  font-size: 16px;
-  color: #6d6d6d;
-}
-
-.noMusic {
-  font-size: 18px;
-  color: #808080;
-}
-
 footer {
-  margin-top: auto; /* duwt de footer naar de onderkant van de container */
+  margin-top: 40px;
   font-size: 14px;
   color: #606060;
 }
 
 @media only screen and (max-width: 768px) {
   .templateContainer {
-    width: 95% !important;
-  }
-  .nowPlayingContainer {
-    flex-direction: column;
-  }
-  .albumCover {
-    width: 100px;
-    height: 100px;
-  }
-  .songTitle {
-    font-size: 18px;
-  }
-  .artistName {
-    font-size: 14px;
+    width: 95%;
   }
 }
