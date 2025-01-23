@@ -13,23 +13,52 @@ html, body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* zorgt dat de achtergrond altijd de volledige hoogte beslaat */
-  padding: 20px; /* voeg wat padding toe voor mobiele weergave */
+  padding: 0; /* verwijder extra padding voor precieze uitlijning */
 }
 
 .templateContainer {
-  width: 90%; /* beperk breedte van de container */
-  max-width: 1200px; /* maximale breedte */
-  margin: 0 auto; /* zorgt dat de container gecentreerd blijft */
+  width: 60%;
+  max-width: 800px; /* consistentie met terms.jintra.nl */
+  margin: 40px auto; /* ruimte rondom de container */
   background-color: #ffffff;
   padding: 20px;
+  border-radius: 0px; /* geen afgeronde hoeken */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  border-radius: 0; /* verwijder afgeronde hoeken als dat nodig is */
+  display: flex;
+  flex-direction: column; /* inhoud verticaal centreren */
+  justify-content: center; /* inhoud in het midden houden */
 }
 
 .logo {
-  max-width: 150px; /* verklein de grootte van het logo */
+  max-width: 200px; /* logo blijft dezelfde grootte */
   margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #202020;
+  margin: 20px 0;
+}
+
+.nowPlayingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.albumCover {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto; /* centreren op mobiel */
+}
+
+.trackInfo {
+  text-align: left;
 }
 
 footer {
@@ -38,20 +67,18 @@ footer {
   color: #606060;
 }
 
-.albumCover {
-  width: 150px; /* vaste grootte voor album art */
-  height: 150px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  margin: 20px auto; /* centreren op mobiel */
-}
-
 @media only screen and (max-width: 768px) {
   .templateContainer {
-    width: 95%; /* voor kleinere schermen iets breder */
+    width: 90%; /* iets breder op mobiele schermen */
   }
   .albumCover {
     width: 120px; /* kleinere album art op mobiel */
     height: 120px;
+  }
+  h1 {
+    font-size: 20px; /* kleinere titeltekst */
+  }
+  footer {
+    font-size: 12px; /* kleinere tekst voor footer */
   }
 }
