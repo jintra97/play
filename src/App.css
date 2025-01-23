@@ -1,4 +1,3 @@
-/* algemene stijl */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,28 +5,30 @@ html, body {
   height: 100%;
   font-family: helvetica, arial, sans-serif;
   background-color: #6d4588;
-  overflow: hidden; /* voorkomt horizontaal scrollen */
+  overflow-x: hidden; /* voorkomt horizontaal scrollen */
 }
 
 .App {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* vult de hoogte van het scherm */
+  min-height: 100vh;
+  padding: 20px; /* extra ruimte rondom de container */
+  box-sizing: border-box; /* zorgt dat padding binnen de totale hoogte valt */
 }
 
 .templateContainer {
   width: 60%;
   max-width: 1200px;
-  min-height: 80%;
-  margin: 0 auto;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
+  display: flex;
+  flex-direction: column; /* voor verticale uitlijning van inhoud */
+  justify-content: center; /* inhoud in het midden centreren */
+  min-height: 80vh; /* zorgt dat de container voldoende ruimte inneemt */
 }
 
 .logo {
