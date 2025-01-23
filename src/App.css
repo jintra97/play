@@ -13,20 +13,22 @@ html, body {
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* zorgt dat de achtergrond altijd de volledige hoogte beslaat */
+  padding: 20px; /* voeg wat padding toe voor mobiele weergave */
 }
 
 .templateContainer {
-  width: 60%;
-  max-width: 1200px;
-  margin: 20px auto; /* zorgt voor gelijke padding */
+  width: 90%; /* beperk breedte van de container */
+  max-width: 1200px; /* maximale breedte */
+  margin: 0 auto; /* zorgt dat de container gecentreerd blijft */
   background-color: #ffffff;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  border-radius: 0; /* verwijder afgeronde hoeken als dat nodig is */
 }
 
 .logo {
-  max-width: 200px;
+  max-width: 150px; /* verklein de grootte van het logo */
   margin-bottom: 20px;
 }
 
@@ -36,8 +38,20 @@ footer {
   color: #606060;
 }
 
+.albumCover {
+  width: 150px; /* vaste grootte voor album art */
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto; /* centreren op mobiel */
+}
+
 @media only screen and (max-width: 768px) {
   .templateContainer {
-    width: 95%;
+    width: 95%; /* voor kleinere schermen iets breder */
+  }
+  .albumCover {
+    width: 120px; /* kleinere album art op mobiel */
+    height: 120px;
   }
 }
